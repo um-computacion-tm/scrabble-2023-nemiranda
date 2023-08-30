@@ -1,0 +1,1 @@
+29/08 Carpetas base hechas, inicio con tests, no entiendo los models
