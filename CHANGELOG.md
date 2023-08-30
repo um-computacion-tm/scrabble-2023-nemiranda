@@ -1,1 +1,1 @@
-29/08 Carpetas base hechas, inicio con tests, no entiendo los models
+29/08 mejora de documentos base, comienzo changelog y empiezo con test
