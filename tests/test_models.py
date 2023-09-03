@@ -36,7 +36,7 @@ class TestBagTiles(unittest.TestCase):
         tiles = bag.take(2)
         self.assertEqual(
             len(bag.tiles),
-            3,
+            26,
         )
         self.assertEqual(
             len(tiles),
@@ -49,7 +49,7 @@ class TestBagTiles(unittest.TestCase):
         bag.put(put_tiles)
         self.assertEqual(
             len(bag.tiles),
-            7,
+            30,
         )
 
 

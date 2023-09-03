@@ -13,3 +13,13 @@ class Board:
                        'Y': 1, 'Z': 10, 'Comodin': 0}
 
 
+def calculate_word_value(word):
+    word_value = 0
+    world_multiplier = 1
+    for i in word:
+        word_value += i.calculate_value()
+        if i.multiplier_type == 'word':
+            word_multiplier = i.multiplier
+            i.multiplier_type = None
+    word_value *= word_multiplier
+    return(word_value)
