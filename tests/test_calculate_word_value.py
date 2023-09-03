@@ -1,5 +1,5 @@
 import unittest
-from xxx import calculate_word_value
+from game.board import calculate_word_value
 from game.cell import Cell
 from game.models import Tile
 
