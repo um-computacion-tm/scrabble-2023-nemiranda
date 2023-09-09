@@ -1,3 +1,4 @@
-03/09 agrego funcion calculate_word_ value a board, me da error en linea 37 y 50 de test_models, tengo que solucionar
-29/08 mejora de documento base, comienzo changelog y empiezo con test
-05/09 agrego funcion change tiles en player
+03/09 adding function calculate_word_ value a board, its give me an error in line 37 and 50 of test_models, I have to solve this.
+29/08 improving base document, starting changelog and starting with tests.
+05/09 adding function change tiles in player.
+09/09 adding square file with square class and add tile and calculate score letter.
