@@ -3,3 +3,4 @@
 05/09 adding function change tiles in player.
 09/09 adding square file with square class and add tile and calculate score letter. Changing the changelog to english
 10/09 adding the values of the bag tiles in the file models
+11/09 adding class test initalization in test models and changing de name of the folder tests to test
