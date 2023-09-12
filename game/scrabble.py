@@ -11,3 +11,8 @@ class ScrabbleGame:
         self.dictionary = []
         for _ in range(players_count):
             self.players.append(Player())
+
+    def next_turn(self):
+        self.turn += 1
+        if self.turn >= len(self.players):
+            self.turn = 0
