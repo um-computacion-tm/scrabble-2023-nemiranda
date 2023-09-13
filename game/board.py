@@ -12,14 +12,27 @@ class Board:
                        'Q': 5, 'R': 1, 'RR': 8, 'S': 1, 'T': 1, 'U': 1, 'V': 4, 'X': 8,
                        'Y': 1, 'Z': 10, 'Comodin': 0}
 
+    @staticmethod
+    def calculate_word_value(word: list[Cell]) -> int:
+        value: int = 0
+        multiplier_word = None
+        for cell in word:
+            value = value + cell.calculate_value()
+            if cell.multiplier_type == "word" and cell.active:
+                multiplier_word = cell.multiplier
+        if multiplier_word:
+            value = value * multiplier_word
+        return value
 
-def calculate_word_value(word):
-    word_value = 0
-    world_multiplier = 1
-    for i in word:
-        word_value += i.calculate_value()
-        if i.multiplier_type == 'word':
-            word_multiplier = i.multiplier
-            i.multiplier_type = None
-    word_value *= word_multiplier
-    return(word_value)
+    def validate_word_inside_board(self, word, location, orientation):
+        #WORK IN PROGRESS
+        position_x = location[0]
+        position_y = location[1]
+        len_word = len(word)
+        if orientation == "H":
+            if position_x + len_word > 15:
+                return False
+            else:
+                return True
+        else:
+            pass
