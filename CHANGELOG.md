@@ -4,4 +4,5 @@
 09/09 Adding square file with square class and add tile and calculate score letter. Changing the changelog to english.
 10/09 Adding the values of the bag tiles in the file models.
 11/09 Adding class test initalization in test models and changing de name of the folder tests to test.
-12/09 Adding function to change to the next turn in file scrabble.
+12/09 Adding function to change to the next turn in file scrabble and adding Dockerfile.
+13/09 
