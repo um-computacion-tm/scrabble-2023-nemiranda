@@ -6,3 +6,4 @@
 11/09 Adding class test initalization in test models and changing de name of the folder tests to test.
 12/09 Adding function to change to the next turn in file scrabble and adding Dockerfile.
 13/09 Changing readme, adding functions to validate word, get words and put words. Adding a function to validate the words inside the board. Adding main file in the game folder.
+14/09 Adding tests to validate if the words are inside the board, out of the board, if board horizontal and vertical are empty or not.
