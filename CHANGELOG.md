@@ -8,3 +8,4 @@
 13/09 Changing readme, adding functions to validate word, get words and put words. Adding a function to validate the words inside the board. Adding main file in the game folder.
 14/09 Adding tests to validate if the words are inside the board, out of the board, if board horizontal and vertical are empty or not.
 16/09 Adding function to validate tiles for word.
+17/09 Adding a function to validate if words are connected

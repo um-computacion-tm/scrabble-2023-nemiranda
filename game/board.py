@@ -58,3 +58,17 @@ class Board:
             elif orientation == 'V':
                 N += 1
         return True
+
+        def validate_connected_words(self,word, location, orientation):
+        N = location[0] - 1 
+        M = location[1] - 1
+        for i in range(len(word)):
+            if N == 7 and M == 7 and self.grid[7][7].letter == ' ':
+                return True
+            if self.grid[N][M].letter != ' ':
+                return True
+            if orientation == 'H':
+                M += 1
+            elif orientation == 'V':
+                N += 1
+        return False
