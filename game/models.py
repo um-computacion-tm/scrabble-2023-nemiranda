@@ -33,7 +33,7 @@ class BagTiles:
         for i in range (0,2,1): #2 fichas H valor 4
             self.tiles.append(Tile('H', 4))
         for i in range (0,2,1): #2 COMODINES
-            self.tiles.append(EspecialTile('A'))
+            self.tiles.append(Tile('A'))
         for i in range (0,6,1): #6 fichas S valor 1
             self.tiles.append(Tile('S', 1))
         for i in range (0,4,1): #4 fichas C valor 3

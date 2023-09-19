@@ -22,5 +22,10 @@ class ScrabbleGame:
         self.board.validate_word_inside_board(word, location, orientation)
     
     def get_words():
+        pass
 
     def put_words():
+        pass
+
+if __name__ == '__main__':
+    pass

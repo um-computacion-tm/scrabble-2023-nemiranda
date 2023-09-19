@@ -38,8 +38,8 @@ class Board:
             pass
 
         def validate_tiles_for_word(self, word, location, orientation, playerTiles):
-        N = location[0] - 1 
-        M = location[1] - 1
+            N = location[0] - 1 
+            M = location[1] - 1
         
         playerTilesToVerify = []
         for i in playerTiles:
@@ -60,8 +60,8 @@ class Board:
         return True
 
         def validate_connected_words(self,word, location, orientation):
-        N = location[0] - 1 
-        M = location[1] - 1
+            N = location[0] - 1 
+            M = location[1] - 1
         for i in range(len(word)):
             if N == 7 and M == 7 and self.grid[7][7].letter == ' ':
                 return True
@@ -74,7 +74,7 @@ class Board:
         return False
 
         def show_board(self):
-        print('')
+            print('')
         columnas = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O']
         print("  ".join(columnas))
         print('-----------------------------------------------')
