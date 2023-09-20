@@ -96,3 +96,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 -Changelog style.
+
+
+## (0.1.3) - 2023-09-19
+
+### Changed
+-board.
+-players.
+-models.
+-scrabble.
+-Tests.
+-Changelog.
+-Readme.
+
+
+## (0.1.4) - 2023-09-20
+
+### Added
+-tile file.
+
+### Changed
+-Improving function next_turn.

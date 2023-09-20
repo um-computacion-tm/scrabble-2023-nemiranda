@@ -13,9 +13,15 @@ class ScrabbleGame:
             self.players.append(Player())
 
     def next_turn(self):
-        self.turn += 1
-        if self.turn >= len(self.players):
-            self.turn = 0
+        if self.current_player == None:
+            self.current_player = self.players[0]
+        else:            
+            index = self.players.index(self.current_player) + 1
+            if index >= len(self.players):
+                self.current_player = self.players[0]
+            else:
+                self.current_player = self.players[index]
+
 
     def validate_word(self, word, location, orientation):
 
