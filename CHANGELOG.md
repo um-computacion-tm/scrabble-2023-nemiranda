@@ -117,3 +117,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 -Improving function next_turn.
+
+
+## (0.1.5) - 2023-09-21
+
+### Added
+-end game function.

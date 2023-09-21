@@ -33,5 +33,12 @@ class ScrabbleGame:
     def put_words():
         pass
 
+    def end_game(self):
+        if  self.bag_tiles == []:
+            return True
+        else:
+            return False
+
+
 if __name__ == '__main__':
     pass
