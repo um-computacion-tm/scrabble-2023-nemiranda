@@ -88,3 +88,20 @@ class Board:
                     print(self.grid[i][j].letter.letter.upper(), end=' ')
             print('')
         print('')   
+
+        def supeponer(self, word, location, orientation):
+        N = location[0] - 1 
+        M = location[1] - 1
+        for i in word:
+            if self.grid[N][M].letter == ' ':
+                pass
+            elif self.grid[N][M].letter != i:
+                return False
+            if orientation == 'H':
+                M += 1
+            elif orientation == 'V':
+                N += 1
+        return True
+
+        def board_array(self):
+            return self.board

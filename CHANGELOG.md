@@ -123,3 +123,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 -end game function.
+
+
+## (0.1.5) - 2023-09-21
+
+### Added
+-superponer function in board.
+-array function in board.
