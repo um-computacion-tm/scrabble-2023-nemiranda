@@ -1,4 +1,10 @@
 .coverage
 __pycache__/*
-*/__pycache__/*x
-example
+*/__pycache__/*
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
