@@ -1,4 +1,4 @@
-from game.cell import Cell
+from game.cell import *
 
 
 class Board:
@@ -36,6 +36,14 @@ class Board:
                 return True
         else:
             pass
+
+    def is_empty(self):
+        for row in self.grid:
+            for cell in row:
+                if cell.letter != '':
+                    return False
+        return True
+
 
         def validate_tiles_for_word(self, word, location, orientation, playerTiles):
             N = location[0] - 1 
@@ -90,8 +98,8 @@ class Board:
         print('')   
 
         def supeponer(self, word, location, orientation):
-        N = location[0] - 1 
-        M = location[1] - 1
+            N = location[0] - 1 
+            M = location[1] - 1
         for i in word:
             if self.grid[N][M].letter == ' ':
                 pass

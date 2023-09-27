@@ -130,3 +130,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 -superponer function in board.
 -array function in board.
+
+
+## (0.1.6) - 2023-09-26
+
+### Added
+-Function to verify is the cell is empty.
+### Changed
+-Every game files tu pass the tests.
+-Changelog.

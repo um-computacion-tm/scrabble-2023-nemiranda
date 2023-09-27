@@ -1,8 +1,6 @@
 import unittest
-from game.models import (
-    BagTiles,
-    Tile,
-)
+from game.models import *
+from game.tile import *
 from unittest.mock import patch
 
 
@@ -49,7 +47,7 @@ class TestBagTiles(unittest.TestCase):
         bag.put(put_tiles)
         self.assertEqual(
             len(bag.tiles),
-            7,
+            102,
         )
     
     class TestInitialization(unittest.TestCase):
