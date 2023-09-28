@@ -39,6 +39,25 @@ class ScrabbleGame:
         else:
             return False
 
+class Validate:
 
+    def validate_word(self, word):
+
+        rute = './dictionary.txt'
+
+        word = word.replace(' ', '').lower()
+        word = word.replace('á', 'a')
+        word = word.replace('é', 'e')
+        word = word.replace('í', 'i')
+        word = word.replace('ó', 'o')
+        word = word.replace('ú', 'u')
+
+        with open(rute, 'r') as archivo_texto:
+            contenido = archivo_texto.read().splitlines()
+
+        if word in contenido:
+            return True
+        else:
+            raise NoMatchForWordException("No existe esta palabra")
 if __name__ == '__main__':
     pass

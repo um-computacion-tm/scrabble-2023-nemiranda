@@ -30,7 +30,7 @@ class TestCell(unittest.TestCase):
         self.assertEqual(cell.letter, letter)
 
     def test_cell_value(self):
-        cell = Cell(multiplier=2, multiplier_type='letter')
+        cell = Cell(multiplier=2, multiplier_type='letter', '')
         letter = Tile(letter='p', value=3)
         cell.add_letter(letter=letter)
 

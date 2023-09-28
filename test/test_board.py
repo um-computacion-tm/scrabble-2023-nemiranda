@@ -88,5 +88,11 @@ class TestBoard(unittest.TestCase):
         word_is_valid = board.validate_word_place_board(word, location, orientation)
         assert word_is_valid == True
 
+    def test_word_valide_acento_and_spaces(self):
+            val = Validate()
+            word = 'ár bol'
+            self.assertTrue(
+                val.validate_word(word)
+            )
 if __name__ == '__main__':
     unittest.main()

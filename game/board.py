@@ -4,7 +4,7 @@ from game.cell import *
 class Board:
     def __init__(self):
         self.grid = [
-            [ Cell(1, '') for _ in range(15) ]
+            [ Cell(1, '', ('')) for _ in range(15) ]
             for _ in range(15)
         ]
         self.score = {'A': 1, 'B': 3, 'C': 3, 'CH': 5, 'D': 2, 'E': 1, 'F': 4, 'G': 2, 'H': 4,
