@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.2.0)
+
+### Added
+-Function to show the board.
+
+
 ## (0.1.9) - 2023-09-28
 
 ### Added

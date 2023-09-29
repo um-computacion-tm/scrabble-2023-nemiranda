@@ -113,3 +113,19 @@ class Board:
 
         def board_array(self):
             return self.board
+
+        def show_board(self):
+            print('')
+            columnas = ['   ','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O']
+            print("  ".join(columnas))
+            print('-------------------------------------------------')
+            filas  = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15']
+            for i in range(15):
+                print(filas[i], end='|  ')
+                for j in range(15):
+                    if self.grid[i][j].letter is None:
+                        print('-', end='  ')
+                    else:
+                        print(self.grid[i][j].letter.letter.upper(), end='  ')
+                print('')
+            print('')   
