@@ -94,5 +94,13 @@ class TestBoard(unittest.TestCase):
             self.assertTrue(
                 val.validate_word(word)
             )
+    
+    def test_not_empty(self):
+        board = Board()
+        word = [Tile('c',1),Tile('a',1),Tile('s',2),Tile('a',1)]
+        location = (6,7)
+        orientation = 'V'
+        self.assertEqual(board.validate_init_of_game(word,location,orientation),True)
+
 if __name__ == '__main__':
     unittest.main()

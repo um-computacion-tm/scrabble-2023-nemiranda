@@ -128,4 +128,15 @@ class Board:
                     else:
                         print(self.grid[i][j].letter.letter.upper(), end='  ')
                 print('')
-            print('')   
+            print('')
+        
+        def validate_init(self, word, location, orientation):
+                    center_row, center_col = 7, 7
+                    if orientation == "H":
+                        word_coords = [(location[0], location[1] + i) for i in range(len(word))]
+                    elif orientation == "V":
+                        word_coords = [(location[0] + i, location[1]) for i in range(len(word))]
+                    for coord in word_coords:
+                        if coord == (center_row, center_col):
+                            return True
+                    return False

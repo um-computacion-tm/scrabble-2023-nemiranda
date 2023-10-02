@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.2.1) - 2023-10-01
+
+### Added
+-Function to validate init in the game and its test.
+
+
 ## (0.2.0)
 
 ### Added
