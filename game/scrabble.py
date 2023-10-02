@@ -59,5 +59,12 @@ class Validate:
             return True
         else:
             raise NoMatchForWordException("No existe esta palabra")
+
+    def end(self):
+        if  self.bag_tiles == []:
+            return True
+        else:
+            return False
+
 if __name__ == '__main__':
     pass

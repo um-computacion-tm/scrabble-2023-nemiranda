@@ -97,7 +97,7 @@ class Board:
             print('')
         print('')   
 
-        def supeponer(self, word, location, orientation):
+        def superponer(self, word, location, orientation):
             N = location[0] - 1 
             M = location[1] - 1
         for i in word:

@@ -102,5 +102,30 @@ class TestBoard(unittest.TestCase):
         orientation = 'V'
         self.assertEqual(board.validate_init_of_game(word,location,orientation),True)
 
+
+    def test_superponer(self):
+        self.grid = [[' ' for _ in range(5)] for _ in range(5)]  # Ejemplo de cuadrícula vacía
+        self.grid[1][1] = 'A'  # Establecer una letra 'A' en la posición (1, 1)
+
+    def test_superponer_horizontal_exitoso(self):
+        # Prueba de superposición horizontal exitosa
+        obj = ClaseGrid(self.grid)  # Supongamos que ClaseGrid toma la cuadrícula como argumento
+        self.assertTrue(obj.supeponer("ABC", (1, 1), "H"))
+
+    def test_superponer_horizontal_fallido(self):
+        # Prueba de superposición horizontal fallida
+        obj = ClaseGrid(self.grid)
+        self.assertFalse(obj.supeponer("ADC", (1, 1), "H"))
+
+    def test_superponer_vertical_exitoso(self):
+        # Prueba de superposición vertical exitosa
+        obj = ClaseGrid(self.grid)
+        self.assertTrue(obj.supeponer("ABC", (1, 1), "V"))
+
+    def test_superponer_vertical_fallido(self):
+        # Prueba de superposición vertical fallida
+        obj = ClaseGrid(self.grid)
+        self.assertFalse(obj.supeponer("ADC", (1, 1), "V"))
+
 if __name__ == '__main__':
     unittest.main()

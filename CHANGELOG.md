@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.2.2) - 2023-10-02
+
+### Added
+-Tests to superponer function.
+-end game test.
+
+
 ## (0.2.1) - 2023-10-01
 
 ### Added

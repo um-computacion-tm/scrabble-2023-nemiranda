@@ -12,6 +12,11 @@ class TestScrabbleGame(unittest.TestCase):
         )
         self.assertIsNotNone(scrabble_game.bag_tiles)
 
+    def test_end(self):
+        scrabble_game = ScrabbleGame(players_count=3)
+        self.assertFalse(scrabble_game.end())
+        scrabble_game.bag_tiles=[]
+        self.assertTrue(scrabble_game.end())
 
 if __name__ == '__main__':
     unittest.main()
