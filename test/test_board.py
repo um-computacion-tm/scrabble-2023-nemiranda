@@ -127,5 +127,29 @@ class TestBoard(unittest.TestCase):
         obj = ClaseGrid(self.grid)
         self.assertFalse(obj.supeponer("ADC", (1, 1), "V"))
 
+    def test_word_connected(self):
+        board1 = Board()
+        board1.grid[7][7].letter.letter = 'V'
+        board1.grid[7][8].letter.letter = 'A'
+        board1.grid[7][9].letter.letter = 'S'
+        board1.grid[7][10].letter.letter = '0'
+        location = [7,9]
+        orientation = 'V'
+        word = 'CASA'
+        result = board1.validate_word_is_connected(word, location, orientation)
+        self.assertTrue(result)
+
+    def test_word_not_connected(self):
+        board1 = Board()
+        board1.grid[7][7].letter = 'V'
+        board1.grid[7][8].letter = 'A'
+        board1.grid[7][9].letter = 'S'
+        board1.grid[7][10].letter = '0'
+        location = [2,2]
+        orientation = 'V'
+        word = 'CASA'
+        result = board1.validate_word_is_connected(word, location, orientation)
+        self.assertFalse(result)
+
 if __name__ == '__main__':
     unittest.main()

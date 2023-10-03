@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.2.3) - 2023-10-03
+
+### Added
+-Tets to connected and not connected words.
+
+
 ## (0.2.2) - 2023-10-02
 
 ### Added
