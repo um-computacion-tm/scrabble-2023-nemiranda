@@ -1,10 +1,40 @@
 import random
 from game.tile import *
 
+class TileBag:
+    def __init__(self):
+        self.tiles=[]
+        for i in DATA:
+            for j in range(i.get('quantity')):
+                self.tiles.append(Tile(i.get("letter"),i.get("value")))
+        random.shuffle(self.tiles)
+ 
+    def draw_tiles(self,quantity):
+        tile_drawn=[]
+        try:
+            if quantity>len(self.tiles):
+                raise TooMuchTiles
+            else:
+                for i in range(quantity):
+                    tile_drawn.append(self.tiles.pop())
+                return tile_drawn
+        except TooMuchTiles:
+            return tile_drawn
 
+    def put_tiles(self,tiles:list):
+        try:
+            if len(tiles)+len(self.tiles)<=TOTALTILES:
+                self.tiles.extend(tiles)
+            else:
+                raise TooMuchTilesPut
+        except TooMuchTilesPut:
+            return TooMuchTilesPut
 
+    def tiles_remaining(self):
+        return len(self.tiles)
 
 class BagTiles:
+
     def __init__(self):
         self.tiles = [
             Tile('CH', 5),  #1 ficha Ch valor 5

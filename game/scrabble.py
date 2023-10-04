@@ -22,11 +22,6 @@ class ScrabbleGame:
             else:
                 self.current_player = self.players[index]
 
-
-    def validate_word(self, word, location, orientation):
-
-        self.board.validate_word_inside_board(word, location, orientation)
-    
     def get_words():
         pass
 
@@ -41,9 +36,11 @@ class ScrabbleGame:
 
 class Validate:
 
-    def validate_word(self, word):
+    def validate_word(self, word, location, orientation):
 
-        rute = './dictionary.txt'
+        self.board.validate_word_inside_board(word, location, orientation)
+
+        rute = './dictionary.txt' #NEED TO ADD THE DICTIONARY FILE
 
         word = word.replace(' ', '').lower()
         word = word.replace('á', 'a')
