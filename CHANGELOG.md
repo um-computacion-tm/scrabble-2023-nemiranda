@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.2.5) - 2023-10-05
+
+### Added
+-repr function.
+
+### Changed
+-init function in cell.
+
+### Removed
+-dictionary.
+
+
 ## (0.2.4) - 2023-10-04
 
 ### Added
