@@ -1,4 +1,4 @@
-from game.scrabble import ScrabbleGame
+from game.scrabble import *
 
 
 def main():

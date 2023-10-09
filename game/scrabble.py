@@ -1,6 +1,6 @@
-from game.board import Board
-from game.players import Player
-from game.models import BagTiles
+from game.board import *
+from game.players import *
+from game.models import *
 
 
 class ScrabbleGame:
@@ -11,6 +11,10 @@ class ScrabbleGame:
         self.dictionary = []
         for _ in range(players_count):
             self.players.append(Player())
+
+    def give_tiles(self):
+        for player in self.players:
+            player.add_tiles(self.tilebag.draw_tiles(7))
 
     def next_turn(self):
         if self.current_player == None:

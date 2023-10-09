@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.2.6) - 2023-10-09
+
+### Added
+-Function to show tiles.
+-Function to give tiles.
+
+
 ## (0.2.5) - 2023-10-05
 
 ### Added
@@ -49,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -Function to validate init in the game and its test.
 
 
-## (0.2.0)
+## (0.2.0) 2023-09-30
 
 ### Added
 -Function to show the board.

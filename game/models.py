@@ -37,7 +37,7 @@ class BagTiles:
 
     def __init__(self):
         self.tiles = [
-            Tile('CH', 5),  #1 ficha Ch valor 5
+            Tile('CH', 5),  #1 ficha CH valor 5
             Tile('F', 4),   #1 ficha F valor 4
             Tile('J', 8),   #1 ficha J valor 8
             Tile('LL', 8),  #1 ficha LL valor 8
