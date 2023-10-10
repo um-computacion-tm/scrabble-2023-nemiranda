@@ -48,3 +48,6 @@ class Comodin:
                 break
         else:
             raise EmptyTiles
+
+    def remaingtiles(self):
+        return len(self.tiles)

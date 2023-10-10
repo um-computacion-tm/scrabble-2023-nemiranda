@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.2.7) - 2023-10-10
+
+## Added
+-Function to see the rest of the tiles.
+
+### Changed
+-main branch.
+
 ## (0.2.6) - 2023-10-09
 
 ### Added
