@@ -57,6 +57,14 @@ class TestPlayer(unittest.TestCase):
 
         self.assertEqual(is_valid, False)
 
+    def testaddscore(self):
+        player = Player()
+        self.assertEqual(player.score, 0)
+        player.addscore(15)
+        self.assertEqual(player.score, 9)
+        player.addscore(32)
+        self.assertEqual(player.score, 20)
+
 
 if __name__ == '__main__':
     unittest.main()
