@@ -151,5 +151,20 @@ class TestBoard(unittest.TestCase):
         result = board1.validate_word_is_connected(word, location, orientation)
         self.assertFalse(result)
 
+    def testGiveTiles(self):
+        player = Player()
+        tile1 = Tile('N', 1)
+        tile2 = Tile('I', 1)
+        tile3 = Tile('M', 3)
+        tile4 = Tile('A', 1)
+        tile5 = Tile('O', 1)
+        tile6 = Tile('A', 1)
+        tile7 = Tile('D', 2)
+        tiles = [tile1, tile2, tile3, tile4, tile5, tile6, tile7]
+        player.takeTiles(tiles) 
+        result = player.giveTiles([0, 3, 6, 4])
+        self.assertEqual(result, [tile1, tile4, tile7, tile5]) 
+        self.assertEqual(player.rack, [tile2, tile3, tile6])
+
 if __name__ == '__main__':
     unittest.main()

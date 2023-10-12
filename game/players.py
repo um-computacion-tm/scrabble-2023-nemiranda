@@ -20,3 +20,6 @@ class Player:
         for tile in self.tiles:
             tiles.append(tile.letter)
         return tiles
+
+    def addscore(self, score: int):
+        self.score += score

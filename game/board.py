@@ -140,3 +140,13 @@ class Board:
                         if coord == (center_row, center_col):
                             return True
                     return False
+
+        def giveTiles(self, positions: list):
+            tiles = []
+            for i in range(len(positions)):
+                tiles.append(self.rack.pop(positions[i]))
+                for j in range(len(positions)):
+                 if positions[i] < positions[j]:
+                        positions[j] -= 1
+        return tiles
+
