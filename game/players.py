@@ -23,3 +23,6 @@ class Player:
 
     def addscore(self, score: int):
         self.score += score
+
+    def mix_tiles(self):
+        random.shuffle(self.tiles)

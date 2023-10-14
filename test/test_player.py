@@ -65,6 +65,12 @@ class TestPlayer(unittest.TestCase):
         player.addscore(32)
         self.assertEqual(player.score, 20)
 
+    def test_mix_tiles(self):
+        game = ScrabbleGame(1)
+        player_1 = game.players[0]
+        original_tiles = player_1.tiles.copy()
+        player_1.mix_tiles()
+        self.assertNotEqual(original_tiles, player_1.tiles)
 
 if __name__ == '__main__':
     unittest.main()
