@@ -1,4 +1,4 @@
-from game.cell import *
+from cell import *
 
 
 class Board:
@@ -166,3 +166,5 @@ class Board:
                 elif orientation == 'V':
                     N += 1
             return word_cells
+
+        
