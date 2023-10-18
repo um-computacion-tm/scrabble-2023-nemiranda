@@ -166,5 +166,14 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(result, [tile1, tile4, tile7, tile5]) 
         self.assertEqual(player.rack, [tile2, tile3, tile6])
 
+    def test_cells_board(self):
+        board1 = Board()
+        board1.grid[7][7].letter = Tile('C', 1)
+        board1.grid[7][8].letter = Tile('A', 1)
+        board1.grid[7][9].letter = Tile('S', 1)
+        board1.grid[7][10].letter = Tile('A', 1)
+        cells = board1.cells_board('TASA', [8,8], 'H')
+        self.assertEqual(cells, [board1.grid[7][7],board1.grid[7][8],board1.grid[7][9],board1.grid[7][10]])
+
 if __name__ == '__main__':
     unittest.main()
