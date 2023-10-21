@@ -97,3 +97,6 @@ class BagTiles:
 
     def put(self, tiles):
         self.tiles.extend(tiles)
+
+    def left_tiles(self):
+        return len(self.bag)

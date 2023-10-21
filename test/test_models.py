@@ -56,6 +56,15 @@ class TestBagTiles(unittest.TestCase):
             tiles_count = scrabble_tiles.tiles_left()
             assert tiles_count == 100
 
+    def test_exceptiontake(self):
+        bag = BagTiles()
+        tiles_taken = bag.take(97)
+        with self.assertRaises(NoTilesInTheBagException):
+            tiles = bag.take(1)
+        self.assertEqual(
+            bag.lef_tiles(),
+            (0)
+        )
 
 if __name__ == '__main__':
     unittest.main()
