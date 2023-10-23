@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.3.5) - 2023-10-23
+
+### Added
+-multipliers in the board.
+
+### Changed
+-graphic interface.
+
+
+## (0.3.4) - 2023-10-19
+
+### Added
+-Function to see the tiles left and its test.
+
+
 ## (0.3.3) - 2023-10-18
 
 ### Added

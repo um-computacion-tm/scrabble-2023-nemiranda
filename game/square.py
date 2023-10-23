@@ -1,4 +1,4 @@
-from game.tile import Tile
+from tile import Tile
 
 class Square:
     def __init__(self, row = 0, column = 0, tile = None, multiplier_type = None):

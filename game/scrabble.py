@@ -1,6 +1,6 @@
-from game.board import *
-from game.players import *
-from game.models import *
+from board import *
+from players import *
+from models import *
 
 
 class ScrabbleGame:

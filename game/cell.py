@@ -1,4 +1,4 @@
-from game.tile import *
+from tile import *
 
 class Cell:
     def __init__(

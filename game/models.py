@@ -1,5 +1,5 @@
 import random
-from game.tile import *
+from tile import *
 
 class TileBag:
     def __init__(self):

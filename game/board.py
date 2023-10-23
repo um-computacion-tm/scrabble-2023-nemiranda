@@ -166,5 +166,3 @@ class Board:
                 elif orientation == 'V':
                     N += 1
             return word_cells
-
-        
