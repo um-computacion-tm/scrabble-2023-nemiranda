@@ -166,3 +166,11 @@ class Board:
                 elif orientation == 'V':
                     N += 1
             return word_cells
+
+        def replace(self, word):
+            word = word.replace('á', 'a')
+            word = word.replace('é', 'e')
+            word = word.replace('í', 'i')
+            word = word.replace('ó', 'o')
+            word = word.replace('ú', 'u')
+            return word

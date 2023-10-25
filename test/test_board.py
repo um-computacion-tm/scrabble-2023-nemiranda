@@ -175,5 +175,10 @@ class TestBoard(unittest.TestCase):
         cells = board1.cells_board('TASA', [8,8], 'H')
         self.assertEqual(cells, [board1.grid[7][7],board1.grid[7][8],board1.grid[7][9],board1.grid[7][10]])
 
+    def test_replace(self):
+        board=Board()
+        word = 'fácil'
+        self.assertEqual(board.remove_accent(word),'facil')
+
 if __name__ == '__main__':
     unittest.main()
