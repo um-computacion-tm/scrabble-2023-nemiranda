@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
-## (0.3.6) - 2023-10-25
+## (0.3.7) - 2023-10-25
+
+### Added
+-Remaining tests on board.
+
+### Changed
+-gitignore.
+
+
+## (0.3.6) - 2023-10-24
 
 ### Added
 -Function to replace.

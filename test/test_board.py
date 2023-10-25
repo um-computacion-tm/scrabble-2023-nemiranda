@@ -4,6 +4,7 @@ from game.tile import *
 
 
 class TestBoard(unittest.TestCase):
+
     def test_init(self):
         board = Board()
         self.assertEqual(
@@ -14,6 +15,11 @@ class TestBoard(unittest.TestCase):
             len(board.grid[0]),
             15,
         )
+
+    def test_calculate_word_value():
+        # Test case 1: No multipliers
+        word1 = [Cell('A', 1, None, None, True), Cell('B', 3, None, None, True), Cell('C', 1, None, None, True)]
+        assert calculate_word_value(word1) == 5
 
     def test_word_inside_board(self):
         board = Board()
@@ -102,11 +108,6 @@ class TestBoard(unittest.TestCase):
         orientation = 'V'
         self.assertEqual(board.validate_init_of_game(word,location,orientation),True)
 
-
-    def test_superponer(self):
-        self.grid = [[' ' for _ in range(5)] for _ in range(5)]  # Ejemplo de cuadrícula vacía
-        self.grid[1][1] = 'A'  # Establecer una letra 'A' en la posición (1, 1)
-
     def test_superponer_horizontal_exitoso(self):
         # Prueba de superposición horizontal exitosa
         obj = ClaseGrid(self.grid)  # Supongamos que ClaseGrid toma la cuadrícula como argumento
@@ -151,6 +152,82 @@ class TestBoard(unittest.TestCase):
         result = board1.validate_word_is_connected(word, location, orientation)
         self.assertFalse(result)
 
+    def test_superponer(self):
+        self.grid = [[' ' for _ in range(5)] for _ in range(5)]  # Ejemplo de cuadrícula vacía
+        self.grid[1][1] = 'A'  # Establecer una letra 'A' en la posición (1, 1)
+
+    def test_board_array(self):
+        # Create an instance of the ScrabbleBoard class
+        scrabble_board = ScrabbleBoard()
+
+        # Get the board array using the board_array method
+        board = scrabble_board.board_array()
+
+        # Check if the board is a list of lists and has the expected dimensions
+        self.assertIsInstance(board, list)
+        self.assertEqual(len(board), 15)
+        self.assertTrue(all(isinstance(row, list) and len(row) == 15 for row in board))
+
+    def test_show_board(self):
+        # Create an instance of the ScrabbleBoard class
+        scrabble_board = ScrabbleBoard()
+
+        # Call the show_board method
+        scrabble_board.show_board()
+
+        # Capture the printed content
+        printed_content = self.captured_output.getvalue()
+
+        # Define your expected board representation (modify this as needed)
+        expected_board = """
+           A   B   C   D   E   F   G   H   I   J   K   L   M   N   O
+    -------------------------------------------------
+    01|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    02|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    03|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    04|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    05|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    06|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    07|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    08|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    09|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    10|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    11|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    12|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    13|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    14|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+    15|  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  
+        """
+
+        # Remove leading/trailing whitespace for comparison
+        printed_content = printed_content.strip()
+        expected_board = expected_board.strip()
+
+        # Assert that the printed content matches the expected board
+        self.assertEqual(printed_content, expected_board)
+
+    def test_validate_init(self):
+        # Create an instance of the ScrabbleBoard class
+        scrabble_board = ScrabbleBoard()
+
+        # Test with a horizontal word at the center
+        word1 = "WORD"
+        location1 = (7, 5)
+        orientation1 = "H"
+        self.assertTrue(scrabble_board.validate_init(word1, location1, orientation1))
+
+        # Test with a vertical word at the center
+        word2 = "TEST"
+        location2 = (5, 7)
+        orientation2 = "V"
+        self.assertTrue(scrabble_board.validate_init(word2, location2, orientation2))
+
+        # Test with a word that doesn't start at the center
+        word3 = "PYTHON"
+        location3 = (1, 1)
+        orientation3 = "H"
+        self.assertFalse(scrabble_board.validate_init(word3, location3, orientation3))
+
     def testGiveTiles(self):
         player = Player()
         tile1 = Tile('N', 1)
@@ -165,6 +242,21 @@ class TestBoard(unittest.TestCase):
         result = player.giveTiles([0, 3, 6, 4])
         self.assertEqual(result, [tile1, tile4, tile7, tile5]) 
         self.assertEqual(player.rack, [tile2, tile3, tile6])
+
+    def test_multiplication(self):
+        # Create an instance of the ScrabbleBoard class
+        scrabble_board = ScrabbleBoard()
+
+        # Define the expected letters and words tuples
+        expected_letters = ((1, 5), (1, 9), (5, 1), (5, 5), (5, 9), (5, 13), (9, 1), (9, 5), (9, 9), (9, 13), (13, 5), (13, 9),(0, 3), (0, 11), (2, 6), (2, 8), (3, 0), (3, 7), (3, 14), (6, 2), (6, 6), (6, 8), (6, 12), (7, 3), (7, 11), (8, 2), (8, 6), (8, 8), (8, 12), (11, 0), (11, 7), (11, 14), (12, 6), (12, 8), (14, 3), (14, 11))
+        expected_words = ((0, 0), (7, 0), (0, 7), (7, 7), (0, 14), (7, 14), (14, 0), (14, 7), (14, 14), (1, 1), (2, 2), (3, 3), (4, 4), (10, 10), (11, 11), (12, 12), (13, 13), (1, 13), (2, 12), (3, 11), (4, 10), (10, 4), (11, 3), (12, 2), (13, 1))
+
+        # Call the multiplication method
+        result = scrabble_board.multiplication()
+
+        # Check if the result matches the expected tuples
+        self.assertEqual(result[0], expected_letters)
+        self.assertEqual(result[1], expected_words)
 
     def test_cells_board(self):
         board1 = Board()

@@ -81,22 +81,6 @@ class Board:
                 N += 1
         return False
 
-        def show_board(self):
-            print('')
-        columnas = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O']
-        print("  ".join(columnas))
-        print('-----------------------------------------------')
-        filas  = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
-        for i in range(15):
-            print(filas[i], end='|  ')
-            for j in range(15):
-                if self.grid[i][j].letter is None:
-                    print('-', end='  ')
-                else:
-                    print(self.grid[i][j].letter.letter.upper(), end=' ')
-            print('')
-        print('')   
-
         def superponer(self, word, location, orientation):
             N = location[0] - 1 
             M = location[1] - 1
