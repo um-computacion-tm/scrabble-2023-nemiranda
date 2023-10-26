@@ -41,6 +41,18 @@ class TestBagTiles(unittest.TestCase):
             2,
         )
 
+    def test_draw_tiles_valid_quantity(self):
+        game = YourGameObject(['A', 'B', 'C', 'D', 'E'])
+        drawn_tiles = game.draw_tiles(3)
+        self.assertEqual(drawn_tiles, ['E', 'D', 'C'])
+        self.assertEqual(game.tiles, ['A', 'B'])
+
+    def test_draw_tiles_too_many_tiles_requested(self):
+        game = YourGameObject(['A', 'B'])
+        drawn_tiles = game.draw_tiles(3)
+        self.assertEqual(drawn_tiles, [])
+        self.assertEqual(game.tiles, ['A', 'B'])
+
     def test_put(self):
         bag = BagTiles()
         put_tiles = [Tile('Z', 1), Tile('Y', 1)]
@@ -49,6 +61,26 @@ class TestBagTiles(unittest.TestCase):
             len(bag.tiles),
             102,
         )
+
+    def test_tiles_remaining_empty_tiles(self):
+        game = YourGameObject([])
+        remaining = game.tiles_remaining()
+        self.assertEqual(remaining, 0)
+
+    def test_tiles_remaining_non_empty_tiles(self):
+        game = YourGameObject(['A', 'B', 'C', 'D', 'E'])
+        remaining = game.tiles_remaining()
+        self.assertEqual(remaining, 5)
+
+    def test_left_tiles_empty_bag(self):
+        # Test when the bag is empty
+        self.game.bag = []
+        self.assertEqual(self.game.left_tiles(), 0)
+
+    def test_left_tiles_non_empty_bag(self):
+        # Test when the bag has some tiles
+        self.game.bag = ['A', 'B', 'C', 'D']
+        self.assertEqual(self.game.left_tiles(), 4)
     
     class TestInitialization(unittest.TestCase):
         def test_initialization(self):

@@ -11,6 +11,43 @@ class TestPlayer(unittest.TestCase):
             0,
         )
 
+    def test_add_tiles_to_empty_collection(self):
+        game = YourGameObject([])
+        game.add_tiles(['A', 'B', 'C'])
+        self.assertEqual(game.tiles, ['A', 'B', 'C'])
+
+    def test_add_tiles_to_non_empty_collection(self):
+        game = YourGameObject(['D', 'E'])
+        game.add_tiles(['A', 'B', 'C'])
+        self.assertEqual(game.tiles, ['D', 'E', 'A', 'B', 'C'])
+
+    def test_change_tiles_single_tile(self):
+        game = YourGameObject(['A', 'B', 'C', 'D', 'E'])
+        old_indices = [2]
+        new_tiles = ['X']
+        changed = game.change_tiles(old_indices, new_tiles)
+        self.assertEqual(changed, ['B'])
+        self.assertEqual(game.tiles, ['A', 'X', 'C', 'D', 'E'])
+
+    def test_change_tiles_multiple_tiles(self):
+        game = YourGameObject(['A', 'B', 'C', 'D', 'E'])
+        old_indices = [1, 3, 5]
+        new_tiles = ['X', 'Y', 'Z']
+        changed = game.change_tiles(old_indices, new_tiles)
+        self.assertEqual(changed, ['A', 'C', 'E'])
+        self.assertEqual(game.tiles, ['X', 'B', 'Y', 'D', 'Z'])
+
+    def test_show_tiles_empty_collection(self):
+        game = YourGameObject([])
+        result = game.show_tiles()
+        self.assertEqual(result, [])
+
+    def test_show_tiles_non_empty_collection(self):
+        tiles = [Tile('A'), Tile('B'), Tile('C')]
+        game = YourGameObject(tiles)
+        result = game.show_tiles()
+        self.assertEqual(result, ['A', 'B', 'C'])
+
     def test_validate_user_has_letters(self):
         bag_tile = BagTiles()
         bag_tile.tiles = [
@@ -34,8 +71,8 @@ class TestPlayer(unittest.TestCase):
 
         self.assertEqual(is_valid, True)
 
-        def test_validate_fail_when_user_has_not_letters(self):
-            bag_tile = BagTiles()
+    def test_validate_fail_when_user_has_not_letters(self):
+        bag_tile = BagTiles()
         bag_tile.tiles = [
             Tile(letter='P', value=1),
             Tile(letter='O', value=1),
