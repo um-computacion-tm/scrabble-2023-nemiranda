@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## (0.3.9) - 2023-10-27
+
+### Added
+-Remaining tests on square in board and in tile.
+
+### Changed
+-All the functions in the square file moved to the board file.
+
+### Removed
+-square file.
+
+
 ## (0.3.8) - 2023-10-26
 
 ### Added

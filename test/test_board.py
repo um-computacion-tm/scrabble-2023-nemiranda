@@ -272,5 +272,45 @@ class TestBoard(unittest.TestCase):
         word = 'fácil'
         self.assertEqual(board.remove_accent(word),'facil')
 
+class TestSquare(unittest.TestCase):
+    def test_initialization(self):
+        square = Square()
+        self.assertEqual(square.row, 0)
+        self.assertEqual(square.column, 0)
+        self.assertIsNone(square.multiplier_type)
+        self.assertIsNone(square.tile)
+
+    def test_add_tile(self):
+        square = Square()
+        tile = Tile('A', 1)  # Assuming you have a Tile class defined somewhere
+        square.add_tile(tile)
+        self.assertEqual(square.tile, tile)
+
+    def test_calculate_score_letter_no_tile(self):
+        square = Square()
+        score = square.calculate_score_letter()
+        self.assertEqual(score, 0)
+
+    def test_calculate_score_letter_without_multiplier(self):
+        square = Square()
+        tile = Tile('A', 1)  # Assuming you have a Tile class defined somewhere
+        square.add_tile(tile)
+        score = square.calculate_score_letter()
+        self.assertEqual(score, 1)
+
+    def test_calculate_score_letter_DL_multiplier(self):
+        square = Square(multiplier_type='DL')
+        tile = Tile('A', 1)  # Assuming you have a Tile class defined somewhere
+        square.add_tile(tile)
+        score = square.calculate_score_letter()
+        self.assertEqual(score, 2)
+
+    def test_calculate_score_letter_TL_multiplier(self):
+        square = Square(multiplier_type='TL')
+        tile = Tile('A', 1)  # Assuming you have a Tile class defined somewhere
+        square.add_tile(tile)
+        score = square.calculate_score_letter()
+        self.assertEqual(score, 3)
+
 if __name__ == '__main__':
     unittest.main()
